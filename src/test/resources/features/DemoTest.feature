@@ -4,21 +4,18 @@ Feature: Demo test
   Given main page is open
 
   @ui
-  @Epic("Buttons")
-  @Feature("Remove_buttons")
-  @Story("Check_valid_buttons")
-  @Severity(SeverityLevel.HIGH)
-  @Test
+  @allure.label.epic:Buttons
+  @allure.label.feature:Remove
+  @allure.label.story:Valid_remove_button
   Scenario: Remove button
     When user clicks link 'Add/Remove Elements'
       And user click Add button
     Then remove button is displayed
 
   @ui
-  @Epic("Login")
-  @Feature("Authentication")
-  @Story("Valid_user_login")
-  @Severity(SeverityLevel.CRITICAL)
+  @allure.label.epic:Login
+  @allure.label.feature:Authentication
+  @allure.label.story:Valid_user_login
   Scenario Outline: Login page
     When user clicks link 'Form Authentication'
       And user inputs login "<login>"
@@ -32,10 +29,9 @@ Feature: Demo test
       | unknown      | anypass              | successful    |
 
   @ui
-  @Epic("Login")
-  @Feature("Authentication")
-  @Story("Valid_user_login")
-  @Severity(SeverityLevel.CRITICAL)
+  @allure.label.epic:Login
+  @allure.label.feature:Authentication
+  @allure.label.story:Valid_user_login
   Scenario: Login page negative check
     When user clicks link 'Form Authentication'
       And user inputs credentials
